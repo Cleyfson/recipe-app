@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
+import { Link } from 'react-router-dom';
 
 const Popular = () => {
   const [popular, setPopular] = useState([]);
@@ -42,9 +43,11 @@ const Popular = () => {
             recipe.image && (
               <SplideSlide key={recipe.id}>
                 <div className='wrapper__card'>
-                  <p>{recipe.title}</p>
-                  <img src={recipe.image} alt={recipe.title} />
-                  <div className='wrapper__gradient'></div>
+                  <Link to={'/recipe/' + recipe.id}>
+                    <p>{recipe.title}</p>
+                    <img src={recipe.image} alt={recipe.title} />
+                    <div className='wrapper__gradient'></div>
+                  </Link>
                 </div>
               </SplideSlide>
             )

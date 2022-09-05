@@ -1,7 +1,37 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const Searched = () => {
-  return <div>Searched</div>;
+  const [serchedRecipes, setSearchedRecipes] = useState([]);
+  let params = useParams();
+
+  const getSearched = async (name) => {
+    const data = await fetch(
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${
+        import.meta.env.VITE_API_KEY
+      }&query=${name}`
+    );
+    const recipes = await data.json();
+    setSearchedRecipes(recipes.results);
+  };
+
+  useEffect(() => {
+    getSearched(params.search);
+  }, [params.search]);
+
+  return (
+    <div className='grid'>
+      {serchedRecipes.map((item) => {
+        return (
+          <div key={item.id} className='card'>
+            <img src={item.image} alt={item.title} />
+            <h4>{item.title}</h4>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default Searched;
