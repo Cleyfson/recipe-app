@@ -17,7 +17,6 @@ const Cuisine = () => {
 
   useEffect(() => {
     getCuisine(params.type);
-    console.log(params.type);
   }, [params.type]);
 
   return (
@@ -25,8 +24,10 @@ const Cuisine = () => {
       {cuisine.map((item) => {
         return (
           <div className='grid__card' key={item.id}>
-            <img src={item.image} alt='' />
-            <h4>{item.title}</h4>
+            <Link to={'/recipe/' + item.id}>
+              <img src={item.image} alt='' />
+              <h4>{item.title}</h4>
+            </Link>
           </div>
         );
       })}

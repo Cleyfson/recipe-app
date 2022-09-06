@@ -15,7 +15,6 @@ const Recipe = () => {
     );
     const detailData = await data.json();
     setDetails(detailData);
-    console.log(detailData);
   };
 
   useEffect(() => {
@@ -47,9 +46,25 @@ const Recipe = () => {
           onClick={() => setActiveTab('ingridients')}>
           Ingredients
         </button>
-        <div>
-          <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
-        </div>
+        {activeTab === 'instructions' && (
+          <div>
+            <p
+              className='detail__text'
+              dangerouslySetInnerHTML={{ __html: details.summary }}></p>
+            <p
+              className='detail__text'
+              dangerouslySetInnerHTML={{ __html: details.instructions }}></p>
+          </div>
+        )}
+        {activeTab === 'ingridients' && (
+          <ul className='detail__wrapper'>
+            {details.extendedIngredients.map((item) => (
+              <li className='detail__item' key={item.id}>
+                {item.original}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
