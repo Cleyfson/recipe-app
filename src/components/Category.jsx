@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
-import { GiNoodles, GiChopsticks } from 'react-icons/gi';
+import { GiNoodles } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 
 const Category = () => {
@@ -17,10 +17,6 @@ const Category = () => {
       <NavLink className={'list__link'} to={'/cuisine/Thai'}>
         <GiNoodles />
         <h4>Thai</h4>
-      </NavLink>
-      <NavLink className={'list__link'} to={'/cuisine/Japanese'}>
-        <GiChopsticks />
-        <h4>Japanese</h4>
       </NavLink>
     </div>
   );
