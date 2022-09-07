@@ -30,7 +30,7 @@ But, is required that you use a server to have a most flowable experience.
 $ git clone https://github.com/Cleyfson/recipe-app.git
 
 # Enter the poject folder in the Terminal
-$ cd drive
+$ cd recipe.app
 
 # Install all the dependencies
 $ npm install
@@ -51,7 +51,6 @@ Those following tools were used in the project development:
 
 ### **Application** ([ReactJS](https://reactjs.org/))
 
-- **[Swiper](https://swiperjs.com/)**
 - **[ReactDom](https://reactjs.org/docs/react-dom.html)**
 
 </br>
