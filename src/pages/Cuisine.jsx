@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Cuisine = () => {
   const [cuisine, setCuisine] = useState([]);
@@ -20,7 +21,12 @@ const Cuisine = () => {
   }, [params.type]);
 
   return (
-    <div className='grid'>
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className='grid'>
       {cuisine.map((item) => {
         return (
           <div className='grid__card' key={item.id}>
@@ -31,7 +37,7 @@ const Cuisine = () => {
           </div>
         );
       })}
-    </div>
+    </motion.div>
   );
 };
 
