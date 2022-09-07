@@ -3,11 +3,6 @@
 ## About the project:
 ## Layout of the Application:
 
-## Launching the App:
-
-The application only has a frontend page:
-But, is required that you use a server to have a most flowable experience.
-
 ### Pre requirements
 
 #### Before start, you should need have installed in your computer those following tools:
