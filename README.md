@@ -1,9 +1,6 @@
 # recipe-app
 
 ## About the project:
-
-drive is an application made in order to develop and deepen my skills with React and Sass. Applying in practice the knowledge for the development of a car sales application.
-
 ## Layout of the Application:
 
 ## Launching the App:
@@ -30,7 +27,7 @@ But, is required that you use a server to have a most flowable experience.
 ```bash
 
 # Clone the Repository
-$ git clone https://github.com/Cleyfson/drive.git
+$ git clone https://github.com/Cleyfson/recipe-app.git
 
 # Enter the poject folder in the Terminal
 $ cd drive
