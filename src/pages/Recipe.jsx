@@ -8,13 +8,19 @@ const Recipe = () => {
   let params = useParams();
 
   const fetchDetails = async () => {
-    const data = await fetch(
-      `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${
-        import.meta.env.VITE_API_KEY
-      }`
-    );
-    const detailData = await data.json();
-    setDetails(detailData);
+    const check = localStorage.getItem('details');
+    if (check) {
+      setDetails(JSON.parse(check));
+    } else {
+      const data = await fetch(
+        `https://api.spoonacular.com/recipes/${
+          params.name
+        }/information?apiKey=${import.meta.env.VITE_API_KEY}`
+      );
+      const detailData = await data.json();
+      localStorage.setItem('details', JSON.stringify(detailData));
+      setDetails(detailData);
+    }
   };
 
   useEffect(() => {
