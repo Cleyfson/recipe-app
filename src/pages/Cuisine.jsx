@@ -7,7 +7,7 @@ const Cuisine = () => {
   let params = useParams();
 
   const getCuisine = async (name) => {
-    const check = localStorage.getItem('cuisine');
+    const check = localStorage.getItem(`cuisine${name}`);
     if (check) {
       setCuisine(JSON.parse(check));
     } else {
