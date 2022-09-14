@@ -5,6 +5,14 @@ import { Link } from 'react-router-dom';
 
 const Veggie = () => {
   const [veggie, setVeggie] = useState([]);
+  const [size, setSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => setSize(window.innerWidth);
+    window.addEventListener('resize', handleWindowResize);
+    console.log(size);
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
 
   useEffect(() => {
     getVeggie();
@@ -26,18 +34,27 @@ const Veggie = () => {
     }
   };
 
+  const spliderDesktop = {
+    perPage: 3,
+    arrows: true,
+    pagination: false,
+    drag: 'free',
+    gap: '5rem',
+  };
+
+  const spliderMobile = {
+    perPage: 2,
+    arrows: true,
+    pagination: false,
+    drag: 'free',
+    gap: '1rem',
+  };
+
   return (
     <div className='wrapper'>
-      <h3>Our Vegetarian Picks</h3>
+      <h3 className='wrapper__title'>Our Vegetarian Picks</h3>
 
-      <Splide
-        options={{
-          perPage: 3,
-          arrows: true,
-          pagination: false,
-          drag: 'free',
-          gap: '5rem',
-        }}>
+      <Splide options={size <= 820 ? spliderMobile : spliderDesktop}>
         {veggie.map((recipe) => {
           return (
             <SplideSlide key={recipe.id}>
