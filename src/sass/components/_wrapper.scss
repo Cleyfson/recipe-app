@@ -37,6 +37,11 @@
       min-width: 9.5em;
       min-height: 11em;
     }
+
+    @media (max-width: 420px) {
+      min-width: 7em;
+      min-height: 9.5;
+    }
   }
 
   &__gradient {
