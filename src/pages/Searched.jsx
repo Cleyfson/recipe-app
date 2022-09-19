@@ -7,19 +7,13 @@ const Searched = () => {
   let params = useParams();
 
   const getSearched = async (name) => {
-    const check = localStorage.getItem('recipes');
-    if (check) {
-      setSearchedRecipes(check);
-    } else {
-      const data = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${
-          import.meta.env.VITE_API_KEY
-        }&query=${name}`
-      );
-      const recipes = await data.json();
-      localStorage.setItem('recipes', JSON.stringify(recipes.results));
-      setSearchedRecipes(recipes.results);
-    }
+    const data = await fetch(
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${
+        import.meta.env.VITE_API_KEY
+      }&query=${name}`
+    );
+    const recipes = await data.json();
+    setSearchedRecipes(recipes.results);
   };
 
   useEffect(() => {
