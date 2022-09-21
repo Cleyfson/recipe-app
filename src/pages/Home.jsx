@@ -12,6 +12,7 @@ const Home = () => {
       transition={{ duration: 0.5 }}>
       <Popular />
       <Veggie />
+      done by consuming data from spoonacular API
     </motion.div>
   );
 };
