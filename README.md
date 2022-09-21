@@ -1,6 +1,9 @@
 # recipe-app
 
 ## About the project:
+
+It is a site that contains information about various recipes, with a dynamic and simplified interface. You can have access to specific information for each culinary dish, such as: preparation instructions for each dish, and the necessary ingredients. done by consuming data from spoonacular API.
+
 ## Layout of the Application:
 
 ### Pre requirements
@@ -44,8 +47,13 @@ $ yarn dev
 
 Those following tools were used in the project development:
 
-### **Application** ([ReactJS](https://reactjs.org/))
+### **Application** ([ReactJS](https://reactjs.org/) + [Sass](https://sass-lang.com/))
 
 - **[ReactDom](https://reactjs.org/docs/react-dom.html)**
+- **[ReactRouter](https://reactrouter.com/en/main)**
+- **[FramerMotion](https://www.framer.com/docs/introduction/)**
+- **[ReactIcons](https://react-icons.github.io/react-icons/)**
+- **[SplideJS](https://splidejs.com/)**
+
 
 </br>
